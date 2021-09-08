@@ -615,22 +615,10 @@ const styles = StyleSheet.create({
 LdkInfo.navigationOptions = navigationStyle(
   {
     title: loc.lnd.channels,
-    closeButton: true,
-    closeButtonFunc: ({ navigation }) => navigation.dangerouslyGetParent().pop(),
   },
   (options, { theme, navigation, route }) => {
-    const additionalOptions =
-      route.params.isModal === true
-        ? {
-            headerLeft: null,
-          }
-        : {
-            headerRight: null,
-          };
-
     return {
       ...options,
-      ...additionalOptions,
     };
   },
 );

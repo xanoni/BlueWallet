@@ -83,7 +83,7 @@ const WalletXpub = () => {
 WalletXpub.navigationOptions = navigationStyle(
   {
     closeButton: true,
-    headerLeft: null,
+    headerHideBackButton: true,
   },
   opts => ({ ...opts, title: loc.wallets.xpub_title }),
 );

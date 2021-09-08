@@ -446,8 +446,6 @@ const styles = StyleSheet.create({
   },
   headerTouch: {
     height: 48,
-    paddingRight: 16,
-    paddingLeft: 32,
     paddingVertical: 10,
   },
   listHeaderBack: {

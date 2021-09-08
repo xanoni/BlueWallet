@@ -196,7 +196,7 @@ const ReorderWallets = () => {
 ReorderWallets.navigationOptions = navigationStyle(
   {
     closeButton: true,
-    headerLeft: null,
+    headerHideBackButton: true,
   },
   opts => ({ ...opts, title: loc.wallets.reorder_title }),
 );

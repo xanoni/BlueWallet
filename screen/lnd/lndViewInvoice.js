@@ -361,12 +361,10 @@ LNDViewInvoice.navigationOptions = navigationStyle(
     const additionalOptions =
       route.params.isModal === true
         ? {
-            headerLeft: null,
             gestureEnabled: false,
+            headerHideBackButton: true,
           }
-        : {
-            headerRight: null,
-          };
+        : {};
 
     return {
       ...options,
