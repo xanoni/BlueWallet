@@ -35,6 +35,7 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-standard": "^4.1.0",
     "jest": "^26.1.0",
+    "node-fetch": "^2.6.2",
     "prettier": "^2.2.1",
     "react-test-renderer": "17.0.1",
     "typescript": "^4.3.5"
@@ -94,7 +95,7 @@
     ]
   },
   "dependencies": {
-    "@babel/preset-env": "7.12.1",
+    "@babel/preset-env": "7.15.6",
     "@bugsnag/react-native": "7.13.0",
     "@bugsnag/source-maps": "2.3.0",
     "@keystonehq/bc-ur-registry": "https://github.com/BlueWallet/ur-registry",
@@ -124,7 +125,7 @@
     "buffer-reverse": "1.0.1",
     "coinselect": "3.1.12",
     "crypto-js": "4.1.1",
-    "dayjs": "1.10.6",
+    "dayjs": "1.10.7",
     "detox": "18.20.3",
     "ecurve": "1.0.6",
     "electrum-client": "https://github.com/BlueWallet/rn-electrum-client#99ebcc649d91a8dc39bea7964b02dd9ead464aa4",
