@@ -409,7 +409,7 @@ const InitRoot = () => (
     <InitStack.Screen
       name="ReorderWallets"
       component={ReorderWalletsStackRoot}
-      options={{ headerShown: false, gestureEnabled: false, stackPresentation: 'modal' }}
+      options={{ headerShown: false, gestureEnabled: false, stackPresentation: 'fullScreenModal' }}
     />
     <InitStack.Screen name="DrawerRoot" component={DrawerRoot} options={{ headerShown: false, animationEnabled: false }} />
   </InitStack.Navigator>
