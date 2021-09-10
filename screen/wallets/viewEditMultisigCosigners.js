@@ -1,5 +1,5 @@
 /* global alert */
-import React, { useContext, useRef, useState, useCallback, useEffect } from 'react';
+import React, { useContext, useRef, useState, useCallback } from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -49,7 +49,7 @@ const ViewEditMultisigCosigners = () => {
   const hasLoaded = useRef(false);
   const { colors } = useTheme();
   const { wallets, setWalletsWithNewOrder, isElectrumDisabled } = useContext(BlueStorageContext);
-  const { navigate, dispatch, goBack, addListener } = useNavigation();
+  const { navigate, goBack } = useNavigation();
   const route = useRoute();
   const openScannerButtonRef = useRef();
   const { walletId } = route.params;
@@ -135,27 +135,29 @@ const ViewEditMultisigCosigners = () => {
     },
   });
 
-  useEffect(() => {
-    addListener('beforeRemove', e => {
-      if (!isSaveButtonDisabled) {
-        e.preventDefault();
+  /* RN Screens currently does not support this */
 
-        // Prompt the user before leaving the screen
+  // useEffect(() => {
+  //   addListener('beforeRemove', e => {
+  //     if (!isSaveButtonDisabled) {
+  //       e.preventDefault();
 
-        Alert.alert(loc._.discard_changes, loc._.discard_changes_detail, [
-          { text: loc._.cancel, style: 'cancel', onPress: () => {} },
-          {
-            text: loc._.ok,
-            style: 'destructive',
-            // If the user confirmed, then we dispatch the action we blocked earlier
-            // This will continue the action that had triggered the removal of the screen
-            onPress: () => dispatch(e.data.action),
-          },
-        ]);
-      }
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isSaveButtonDisabled]);
+  //       // Prompt the user before leaving the screen
+
+  //       Alert.alert(loc._.discard_changes, loc._.discard_changes_detail, [
+  //         { text: loc._.cancel, style: 'cancel', onPress: () => {} },
+  //         {
+  //           text: loc._.ok,
+  //           style: 'destructive',
+  //           // If the user confirmed, then we dispatch the action we blocked earlier
+  //           // This will continue the action that had triggered the removal of the screen
+  //           onPress: () => dispatch(e.data.action),
+  //         },
+  //       ]);
+  //     }
+  //   });
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [isSaveButtonDisabled]);
 
   const exportCosigner = () => {
     setIsShareModalVisible(false);

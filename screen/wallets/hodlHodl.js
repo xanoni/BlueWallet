@@ -150,15 +150,17 @@ export default class HodlHodl extends Component {
     this.setState({ methods });
   }
 
-  onFocus = async () => {
-    const hodlApiKey = await this.context.getHodlHodlApiKey();
-    const displayLoginButton = !hodlApiKey;
+  onFocus = async e => {
+    if (e.data.closing === false) {
+      const hodlApiKey = await this.context.getHodlHodlApiKey();
+      const displayLoginButton = !hodlApiKey;
 
-    if (hodlApiKey && !this.state.hodlApiKey) {
-      // only if we had no key, and now we do, we update state
-      // (means user logged in)
-      this.setState({ hodlApiKey });
-      this.props.navigation.setParams({ displayLoginButton });
+      if (hodlApiKey && !this.state.hodlApiKey) {
+        // only if we had no key, and now we do, we update state
+        // (means user logged in)
+        this.setState({ hodlApiKey });
+        this.props.navigation.setParams({ displayLoginButton });
+      }
     }
   };
 
@@ -168,7 +170,7 @@ export default class HodlHodl extends Component {
 
   async componentDidMount() {
     console.log('wallets/hodlHodl - componentDidMount');
-    this._unsubscribeFocus = this.props.navigation.addListener('focus', this.onFocus);
+    this._unsubscribeFocus = this.props.navigation.addListener('transitionEnd', this.onFocus);
     A(A.ENUM.NAVIGATED_TO_WALLETS_HODLHODL);
 
     const hodlApiKey = await this.context.getHodlHodlApiKey();
