@@ -435,7 +435,7 @@ PODS:
     - React-RCTImage
   - RNSecureKeyStore (1.0.0):
     - React
-  - RNShare (7.0.2):
+  - RNShare (7.1.0):
     - React-Core
   - RNSVG (12.1.1):
     - React
@@ -795,7 +795,7 @@ SPEC CHECKSUMS:
   RNReanimated: 9c13c86454bfd54dab7505c1a054470bfecd2563
   RNScreens: 01ab149b5dd5c27f5ff26741b1d2bdf2cee1af35
   RNSecureKeyStore: f1ad870e53806453039f650720d2845c678d89c8
-  RNShare: 3acd1ed34a4baba2fd8541ba409045c37e5f62ff
+  RNShare: 072f63d19c2b90da3742adac614396d805e7ae22
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
   RNVectorIcons: 31cebfcf94e8cf8686eb5303ae0357da64d7a5a4
   RNWatch: 99637948ec9b5c9ec5a41920642594ad5ba07e80
@@ -805,4 +805,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 39afb2c1727531c14ee301938165dcf7a6f6ca0f
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.11.0
